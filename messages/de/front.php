@@ -49,4 +49,5 @@ return [
     'Too many attempts' => 'Zu viele Versuche',
     'Unable to send message for email provided' => 'Es war nicht möglich, die Nachricht an die angegebene E-Mail-Adresse zu senden',
     'You could not login from this IP' => 'Sie können sich von dieser IP nicht anmelden',
+    'Please confirm that you are not a bot.' => 'Bitte bestätigen Sie, dass Sie kein Bot sind.'
 ];

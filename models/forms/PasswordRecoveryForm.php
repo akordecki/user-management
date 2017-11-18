@@ -22,6 +22,7 @@ class PasswordRecoveryForm extends Model
 	 * @var string
 	 */
 	public $captcha;
+	public $reCaptcha;
 
 	/**
 	 * @inheritdoc
@@ -29,9 +30,9 @@ class PasswordRecoveryForm extends Model
 	public function rules()
 	{
 		return [
-			['captcha', 'captcha', 'captchaAction'=>'/user-management/auth/captcha'],
-
-			[['email', 'captcha'], 'required'],
+			//['captcha', 'captcha', 'captchaAction'=>'/user-management/auth/captcha'],
+			[['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator::className(),'uncheckedMessage' => UserManagementModule::t('front', 'Please confirm that you are not a bot.')],
+			[['email'], 'required'],
 			['email', 'trim'],
 			['email', 'email'],
 
@@ -75,6 +76,7 @@ class PasswordRecoveryForm extends Model
 		return [
 			'email' => 'E-mail',
 			'captcha' => UserManagementModule::t('front', 'Captcha'),
+			'reCaptcha' => UserManagementModule::t('front', 'Captcha'),
 		];
 	}
 

@@ -20,9 +20,9 @@ class RegistrationForm extends Model
 	public function rules()
 	{
 		$rules = [
-			['captcha', 'captcha', 'captchaAction'=>'/user-management/auth/captcha'],
+			//['captcha', 'captcha', 'captchaAction'=>'/user-management/auth/captcha'],
 
-			[['username', 'password', 'repeat_password', 'captcha'], 'required'],
+			[['username', 'password', 'repeat_password'], 'required'],
 			[['username', 'password', 'repeat_password'], 'trim'],
 
 			['username', 'unique',

@@ -1,5 +1,6 @@
 <?php
 
+use Yii;
 use webvimark\modules\UserManagement\UserManagementModule;
 
 /**
@@ -8,6 +9,9 @@ use webvimark\modules\UserManagement\UserManagementModule;
 
 $this->title = UserManagementModule::t('back', 'Change own password');
 $this->params['breadcrumbs'][] = $this->title;
+
+Yii::$app->session->setFlash('success', UserManagementModule::t('back', 'Password has been changed'));
+Yii::$app->response->redirect(Url::to(['/']));
 ?>
 <div class="change-own-password-success">
 
